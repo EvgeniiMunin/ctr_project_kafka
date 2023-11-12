@@ -1,0 +1,1 @@
+# ctr_project_kafka
