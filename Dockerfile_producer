@@ -1,0 +1,14 @@
+# Set the base image
+FROM python:3.9
+
+# Copy the Kafka producer code to the image
+COPY producer_avro_future.py .
+COPY wines_SPA.csv .
+WORKDIR .
+
+# Install the Kafka Python client library
+RUN pip install kafka-python
+RUN pip install avro
+
+# Set the command to run the Kafka producer
+CMD ["python", "producer_avro_future.py"]
